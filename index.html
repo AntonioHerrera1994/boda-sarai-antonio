@@ -4,13 +4,18 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 <title>Antonio & Sarai — 31 Julio 2026</title>
+
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Great+Vibes&family=Jost:wght@200;300;400&display=swap" rel="stylesheet">
 <style>
+@font-face {
+  font-family: 'Bacalisties';
+  src: url('./Bacalisties.ttf') format('ttf');
+}
 :root {
   --blush:     #E8B8A9;
   --ivory:     #F6F4F0;
   --sage:      #A6B4A3;
-  --coral:     #CF8E86;
+  --coral:     #828c6a;
   --champagne: #E7D6C5;
   --dark:      #2e1f18;
   --text:      #3c2c24;
@@ -18,61 +23,112 @@
 
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
 html{scroll-behavior:smooth;}
-body{background:#0d1118;font-family:'Jost',sans-serif;overflow-x:hidden;color:var(--text);}
+body{
+background:linear-gradient(180deg,#f7f4ef 0%,#f0ebe3 100%);
+font-family:'Jost',sans-serif;
+overflow-x:hidden;
+color:var(--text);
+}
 
 /* ─── ENVELOPE ─────────────────────────────────────── */
 #env-screen{
-  position:fixed;inset:0;display:flex;align-items:center;
+   position:fixed;inset:0;display:flex;align-items:center;
   justify-content:center;flex-direction:column;gap:32px;
-  background:radial-gradient(ellipse at 40% 55%,#2a1a14 0%,#0d1118 70%);
+  background:radial-gradient(ellipse at 40% 55%,#f6f4f0 0%,#c6c4c4 100%);
   z-index:200;transition:opacity .8s ease,transform .8s ease;
 }
 #env-screen.hide{opacity:0;transform:scale(1.04);pointer-events:none;}
 
-.env-wrap{position:relative;width:min(300px,84vw);cursor:pointer;user-select:none;}
-.env-svg{width:100%;filter:drop-shadow(0 30px 60px rgba(0,0,0,.65));}
-.env-flap{transform-origin:top center;transform-box:fill-box;transition:transform .95s cubic-bezier(.4,0,.2,1);}
-.env-flap.open{transform:rotateX(180deg);}
 
-.seal-wrap{
-  position:absolute;left:50%;top:50%;
-  transform:translate(-50%,-18%);
-  width:82px;height:82px;z-index:10;
-  transition:transform .5s ease,opacity .4s ease;
+#env-screen{
+position:fixed;
+inset:0;
+
+background:linear-gradient(180deg,#f6f4f0 0%,#efe9df 100%);
+
+display:flex;
+align-items:center;
+justify-content:center;
+
+z-index:200;
+
+cursor:pointer;
+
+transition:
+opacity .9s ease,
+transform .9s ease;
 }
-.seal-wrap.break{transform:translate(-50%,-18%) scale(1.4) rotate(18deg);opacity:0;}
 
-.monogram{
-  position:absolute;left:50%;top:calc(50% + 38px);
-  transform:translateX(-50%);
-  font-family:'Cormorant Garamond',serif;font-size:16px;
-  font-weight:300;letter-spacing:4px;color:rgba(255,255,255,.28);
-  white-space:nowrap;transition:opacity .3s;
+#env-screen.hide{
+opacity:0;
+transform:scale(1.03);
+pointer-events:none;
 }
-.monogram.hide{opacity:0;}
 
-.rise-card{
-  position:absolute;left:6%;width:88%;bottom:28%;
-  height:0;overflow:hidden;
-  transition:height .8s cubic-bezier(.4,0,.2,1) .4s,transform .8s cubic-bezier(.4,0,.2,1) .4s;
-  box-shadow:0 20px 60px rgba(0,0,0,.5);
+.env-img{
+
+width:min(420px,90vw);
+
+filter:
+drop-shadow(0 40px 70px rgba(0,0,0,.35));
+
+transition:transform .6s ease;
 }
-.rise-card.open{height:170px;transform:translateY(-190px);}
-.rise-card-inner{
-  width:100%;height:170px;
-  background:linear-gradient(160deg,#3a2218 0%,#1e110a 100%);
-  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;
+
+#env-screen:hover .env-img{
+transform:scale(1.03);
 }
-.rc-name{font-family:'Great Vibes',cursive;font-size:22px;color:rgba(255,255,255,.85);}
-.rc-and{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:11px;color:rgba(255,255,255,.4);letter-spacing:3px;}
 
-.tap-hint{display:flex;flex-direction:column;align-items:center;gap:8px;animation:tapPulse 2s ease-in-out infinite;}
-@keyframes tapPulse{0%,100%{opacity:.4;transform:translateY(0);}50%{opacity:.9;transform:translateY(-5px);}}
-.tap-icon{font-size:22px;}
-.tap-txt{font-size:10px;letter-spacing:5px;text-transform:uppercase;color:rgba(255,255,255,.3);font-weight:200;}
+.env-overlay{
 
+position:absolute;
+
+display:flex;
+flex-direction:column;
+
+align-items:center;
+
+gap:10px;
+
+bottom:18%;
+
+animation:tapPulse 2s ease-in-out infinite;
+}
+
+.tap-icon{
+font-size:28px;
+opacity:.8;
+}
+
+.tap-text{
+
+font-size:11px;
+
+letter-spacing:6px;
+
+text-transform:uppercase;
+
+color:#8b9a8a;
+
+font-weight:300;
+}
 /* ─── INVITATION WRAPPER ───────────────────────────── */
-#inv{opacity:0;pointer-events:none;transition:opacity .8s ease .4s;background:var(--ivory);min-height:100vh;}
+#inv{
+opacity:0;
+pointer-events:none;
+transition:opacity .9s ease;
+}
+
+#inv::before{
+content:'';
+position:absolute;
+top:20px;
+left:20px;
+right:20px;
+bottom:20px;
+border:1px solid rgba(166,180,163,0.2);
+pointer-events:none;
+}
 #inv.show{opacity:1;pointer-events:all;}
 
 /* ─── GUEST BANNER ─────────────────────────────────── */
@@ -106,10 +162,10 @@ body{background:#0d1118;font-family:'Jost',sans-serif;overflow-x:hidden;color:va
 .stars{position:absolute;inset:0;background-image:radial-gradient(1px 1px at 20% 28%,rgba(130,140,106,.25) 0%,transparent 100%),radial-gradient(1px 1px at 58% 12%,rgba(166,180,163,.2) 0%,transparent 100%),radial-gradient(1px 1px at 84% 44%,rgba(130,140,106,.15) 0%,transparent 100%),radial-gradient(1px 1px at 40% 78%,rgba(166,180,163,.15) 0%,transparent 100%),radial-gradient(1px 1px at 73% 72%,rgba(130,140,106,.2) 0%,transparent 100%);}
 
 .hero-content{position:relative;z-index:5;text-align:center;}
-.h-pre{font-size:10px;letter-spacing:6px;text-transform:uppercase;color:#828c6a;font-weight:200;display:block;margin-bottom:28px;animation:fadeUp 1s ease .3s both;}
-.h-n1{font-family:'Cormorant Garamond',serif;font-size:clamp(48px,13vw,82px);font-weight:300;color:#828c6a;letter-spacing:4px;text-transform:uppercase;line-height:1;display:block;animation:fadeUp 1s ease .5s both;}
-.h-and{font-family:'Great Vibes',cursive;font-size:clamp(30px,7vw,50px);color:rgba(130,140,106,.65);display:block;margin:6px 0;animation:fadeUp 1s ease .7s both;}
-.h-n2{font-family:'Cormorant Garamond',serif;font-size:clamp(48px,13vw,82px);font-weight:300;color:#828c6a;letter-spacing:4px;text-transform:uppercase;line-height:1;display:block;animation:fadeUp 1s ease .9s both;}
+.h-pre{font-size:12px;letter-spacing:6px;text-transform:uppercase;color:#828c6a;font-weight:300;display:block;margin-bottom:28px;animation:fadeUp 1s ease .3s both;}
+.h-n1{font-family:'Bacalisties',serif;font-size:clamp(48px,13vw,82px);font-weight:300;color:#828c6a;letter-spacing:4px;line-height:1;display:block;animation:fadeUp 1s ease .5s both;}
+.h-and{font-family:'Bacalisties',cursive;font-size:clamp(30px,7vw,50px);color:rgba(130,140,106,.65);display:block;margin:6px 0;animation:fadeUp 1s ease .7s both;}
+.h-n2{font-family:'Bacalisties',serif;font-size:clamp(48px,13vw,82px);font-weight:300;color:#828c6a;letter-spacing:4px;line-height:1;display:block;animation:fadeUp 1s ease .9s both;}
 .h-div{display:flex;align-items:center;gap:14px;justify-content:center;margin:26px 0;animation:fadeUp 1s ease 1.1s both;}
 .h-div::before,.h-div::after{content:'';height:1px;width:50px;background:linear-gradient(to right,transparent,rgba(130,140,106,.3));}
 .h-div::after{background:linear-gradient(to left,transparent,rgba(130,140,106,.3));}
@@ -119,8 +175,8 @@ body{background:#0d1118;font-family:'Jost',sans-serif;overflow-x:hidden;color:va
 .cb{display:flex;flex-direction:column;align-items:center;gap:5px;}
 .cn{font-family:'Cormorant Garamond',serif;font-size:clamp(38px,9vw,66px);font-weight:300;color:#828c6a;line-height:1;min-width:2ch;text-align:center;}
 .csep{font-family:'Cormorant Garamond',serif;font-size:clamp(30px,7vw,52px);color:rgba(130,140,106,.3);line-height:1;margin-top:3px;}
-.cl{font-size:8px;letter-spacing:3px;text-transform:uppercase;color:rgba(130,140,106,.5);font-weight:300;}
-.h-date{display:block;margin-top:24px;font-size:11px;letter-spacing:6px;text-transform:uppercase;color:rgba(130,140,106,.5);font-weight:200;animation:fadeUp 1s ease 1.7s both;}
+.cl{font-size:12px;letter-spacing:3px;text-transform:uppercase;color:rgba(130,140,106,.5);font-weight:300;}
+.h-date{display:block;margin-top:24px;font-size:12px;letter-spacing:6px;text-transform:uppercase;color:var(--coral);font-weight:300;animation:fadeUp 1s ease 1.7s both;}
 .mus-note{position:absolute;bottom:20px;left:18px;font-size:13px;color:rgba(130,140,106,.25);animation:noteF 4s ease-in-out infinite;}
 @keyframes noteF{0%,100%{transform:translateY(0) rotate(-5deg);opacity:.25;}50%{transform:translateY(-6px) rotate(5deg);opacity:.45;}}
 @keyframes fadeUp{from{opacity:0;transform:translateY(22px);}to{opacity:1;transform:translateY(0);}}
@@ -138,7 +194,7 @@ body{background:#0d1118;font-family:'Jost',sans-serif;overflow-x:hidden;color:va
 .sec-head{display:flex;flex-direction:column;align-items:center;gap:10px;margin-bottom:36px;}
 .sec-vec{display:block;margin:0 auto 4px;}
 .sec-eye{font-size:9px;letter-spacing:5px;text-transform:uppercase;color:var(--coral);font-weight:400;display:block;text-align:center;}
-.sec-tit{font-family:'Cormorant Garamond',serif;font-size:clamp(28px,7vw,48px);font-weight:300;line-height:1;text-align:center;color:var(--dark);}
+.sec-tit{font-family:'Bacalisties',serif;font-size:clamp(28px,7vw,48px);font-weight:300;line-height:1;text-align:center;color:var(--dark);}
 .sec-tit em{font-style:italic;color:var(--coral);}
 .orn{display:flex;align-items:center;gap:12px;justify-content:center;margin-top:16px;}
 .orn::before,.orn::after{content:'';height:1px;width:50px;background:linear-gradient(to right,transparent,rgba(207,142,134,.3));}
@@ -198,11 +254,11 @@ body{background:#0d1118;font-family:'Jost',sans-serif;overflow-x:hidden;color:va
 .pq-icon{font-size:15px;color:var(--coral);opacity:.5;margin-bottom:8px;display:block;}
 .pq{
   font-family:'Cormorant Garamond',serif;
-  font-size:clamp(15px,4vw,21px);font-style:italic;font-weight:300;
+  font-size:clamp(17px,4vw,21px);font-style:italic;font-weight:300;
   color:#2e1a12;line-height:1.85;
   text-shadow:0 2px 12px rgba(246,244,240,.8), 0 0 30px rgba(246,244,240,.5);
 }
-.pq-author{display:block;margin-top:14px;font-size:9px;letter-spacing:5px;text-transform:uppercase;color:var(--coral);font-weight:300;}
+.pq-author{display:block;margin-top:14px;font-size:10px;letter-spacing:5px;text-transform:uppercase;color:var(--coral);font-weight:400;}
 
 /* ─── AGRADECIMIENTOS ───────────────────────────────── */
 
@@ -395,6 +451,16 @@ body{background:#0d1118;font-family:'Jost',sans-serif;overflow-x:hidden;color:va
   .palette{gap:10px;}
   .sw-c{width:50px;height:50px;}
 }
+@keyframes invFade{
+0%{
+opacity:0;
+transform:translateY(40px) scale(.98);
+}
+100%{
+opacity:1;
+transform:translateY(0) scale(1);
+}
+}
 </style>
 </head>
 <body>
@@ -402,63 +468,18 @@ body{background:#0d1118;font-family:'Jost',sans-serif;overflow-x:hidden;color:va
 <!-- ═══════════════════════════════════════════════════
      ENVELOPE
 ═══════════════════════════════════════════════════ -->
-<div id="env-screen">
-  <div class="env-wrap" onclick="openEnv()">
-    <svg class="env-svg" viewBox="0 0 300 380" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <defs>
-        <linearGradient id="eg"  x1="0" y1="0" x2="1" y2="1"><stop offset="0%"   stop-color="#4a2218"/><stop offset="100%" stop-color="#2a1008"/></linearGradient>
-        <linearGradient id="fg"  x1="0" y1="0" x2="0" y2="1"><stop offset="0%"   stop-color="#3e1e10"/><stop offset="100%" stop-color="#1e0a04"/></linearGradient>
-        <linearGradient id="lg"  x1="0" y1="0" x2="1" y2="0"><stop offset="0%"   stop-color="#321508"/><stop offset="100%" stop-color="#4a2218"/></linearGradient>
-        <linearGradient id="rg"  x1="0" y1="0" x2="1" y2="0"><stop offset="0%"   stop-color="#4a2218"/><stop offset="100%" stop-color="#200c04"/></linearGradient>
-        <linearGradient id="bg2" x1="0" y1="0" x2="0" y2="1"><stop offset="0%"   stop-color="#321508"/><stop offset="100%" stop-color="#160600"/></linearGradient>
-      </defs>
-      <rect x="0" y="0" width="300" height="380" rx="3" fill="url(#eg)"/>
-      <polygon points="0,0 150,208 0,380"   fill="url(#lg)" opacity=".88"/>
-      <polygon points="300,0 150,208 300,380" fill="url(#rg)" opacity=".88"/>
-      <polygon points="0,380 150,208 300,380" fill="url(#bg2)" opacity=".94"/>
-      <polygon class="env-flap" id="envFlap" points="0,0 300,0 150,175" fill="url(#fg)" opacity=".97"/>
-      <line x1="0"   y1="2"   x2="150" y2="176" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
-      <line x1="300" y1="2"   x2="150" y2="176" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
-    </svg>
+<div id="env-screen" onclick="openEnv()">
 
-    <div class="rise-card" id="riseCard">
-      <div class="rise-card-inner">
-        <span class="rc-name">Antonio</span>
-        <span class="rc-and">&amp;</span>
-        <span class="rc-name">Sarai</span>
-      </div> 
-    </div>
+<img src="sobre.webp" class="env-img">
 
-    <div class="seal-wrap" id="sealWrap">
-      <svg viewBox="0 0 90 90" fill="none">
-        <defs><radialGradient id="sg" cx="40%" cy="35%"><stop offset="0%" stop-color="#7a3a24"/><stop offset="60%" stop-color="#4a1e10"/><stop offset="100%" stop-color="#2a0e06"/></radialGradient></defs>
-        <circle cx="45" cy="45" r="44" fill="url(#sg)"/>
-        <circle cx="45" cy="45" r="42" fill="none" stroke="rgba(232,184,169,0.2)" stroke-width="1"/>
-        <circle cx="45" cy="45" r="36" fill="none" stroke="rgba(232,184,169,0.1)" stroke-width="1"/>
-        <!-- Lotus -->
-        <ellipse cx="45" cy="48" rx="6" ry="7" fill="rgba(232,184,169,0.25)"/>
-        <ellipse cx="34" cy="45" rx="5" ry="8" fill="rgba(232,184,169,0.18)" transform="rotate(-30 34 45)"/>
-        <ellipse cx="27" cy="42" rx="4" ry="7" fill="rgba(232,184,169,0.12)" transform="rotate(-50 27 42)"/>
-        <ellipse cx="56" cy="45" rx="5" ry="8" fill="rgba(232,184,169,0.18)" transform="rotate(30 56 45)"/>
-        <ellipse cx="63" cy="42" rx="4" ry="7" fill="rgba(232,184,169,0.12)" transform="rotate(50 63 42)"/>
-        <ellipse cx="45" cy="37" rx="5" ry="9" fill="rgba(232,184,169,0.22)"/>
-        <ellipse cx="36" cy="36" rx="4" ry="7" fill="rgba(232,184,169,0.14)" transform="rotate(-20 36 36)"/>
-        <ellipse cx="54" cy="36" rx="4" ry="7" fill="rgba(232,184,169,0.14)" transform="rotate(20 54 36)"/>
-        <path d="M41 55 Q38 60 34 62" stroke="rgba(232,184,169,0.2)" stroke-width="1.5" fill="none"/>
-        <path d="M49 55 Q52 60 56 62" stroke="rgba(232,184,169,0.2)" stroke-width="1.5" fill="none"/>
-        <path d="M45 55 L45 64" stroke="rgba(232,184,169,0.25)" stroke-width="1.5"/>
-        <circle cx="45" cy="5" r="1.5" fill="rgba(232,184,169,0.25)"/>
-        <circle cx="45" cy="85" r="1.5" fill="rgba(232,184,169,0.25)"/>
-        <circle cx="5" cy="45" r="1.5" fill="rgba(232,184,169,0.25)"/>
-        <circle cx="85" cy="45" r="1.5" fill="rgba(232,184,169,0.25)"/>
-      </svg>
-    </div>
-    <div class="monogram" id="monogram">A &amp; S</div>
-  </div>
-  <div class="tap-hint">
-    <span class="tap-icon">👆</span>
-    <span class="tap-txt">Toca para abrir</span>
-  </div>
+<div class="env-overlay">
+
+<div class="tap-icon">✉️</div>
+
+<div class="tap-text">Toca para abrir</div>
+
+</div>
+
 </div>
 
 <!-- ═══════════════════════════════════════════════════
@@ -505,8 +526,8 @@ body{background:#0d1118;font-family:'Jost',sans-serif;overflow-x:hidden;color:va
       <div class="photo-overlay"></div>
       <div class="photo-txt sa sa-up">
         <span class="pq-icon">♪</span>
-        <p class="pq">"Con tu emoción y entusiasmo complementarás<br>un día de más especial y esperado en nuestras vidas."</p>
-        <span class="pq-author">Antonio &amp; Sarai</span>
+        <p class="pq">"Grábame como un sello sobre tu corazón; llévame como una marca sobre tu brazo. Fuerte es el amor, como la muerte, y tenaz la pasión, como el sepulcro. Como llama divina es el fuego ardiente del amor. Ni las muchas aguas pueden apagarlo, ni los ríos pueden extinguirlo"</p>
+        <span class="pq-author">Cantares 8:6-7a</span>
       </div>
     </div>
   </div>
@@ -521,7 +542,7 @@ body{background:#0d1118;font-family:'Jost',sans-serif;overflow-x:hidden;color:va
         <path d="M10 38 Q16 34 26 38 Q36 34 42 38" stroke="#A6B4A3" stroke-width="1.2" fill="none" stroke-linecap="round"/>
       </svg>
       <span class="sec-eye sa sa-up sa-d1">Con gratitud</span>
-      <h2 class="sec-tit sa sa-up sa-d2">Gracias a nuestra <em>Familia</em></h2>
+      <h2 class="sec-tit sa sa-up sa-d2">Gracias a Nuestra <em>Familia</em></h2>
       <div class="orn sa sa-up sa-d3"><span>✦</span></div>
     </div>
     <p class="grat-text sa sa-up sa-d2">
@@ -529,7 +550,7 @@ body{background:#0d1118;font-family:'Jost',sans-serif;overflow-x:hidden;color:va
     </p>
     <div class="grat-div"></div>
     <div class="grat-names">
-      <span class="grat-name sa sa-left sa-d1">Familia Herrera Quinteri</span>
+      <span class="grat-name sa sa-left sa-d1">Familia Herrera Quintero</span>
       <span class="grat-name sa sa-right sa-d2">Familia Lopez Vazquez</span>
      
     </div>
@@ -548,7 +569,7 @@ body{background:#0d1118;font-family:'Jost',sans-serif;overflow-x:hidden;color:va
         <path d="M43 6 L44 4 M43 6 L41 5 M43 6 L45 5 M43 6 L44 8" stroke="#A6B4A3" stroke-width="1" stroke-linecap="round"/>
       </svg>
       <span class="sec-eye sa sa-up sa-d1">Nuestra historia</span>
-      <h2 class="sec-tit sa sa-up sa-d2">Momentos <em>juntos</em></h2>
+      <h2 class="sec-tit sa sa-up sa-d2">Momentos <em>Juntos</em></h2>
       <div class="orn sa sa-up sa-d3"><span>✦</span></div>
     </div>
     <div class="gal-grid sa sa-up sa-d2">
@@ -748,10 +769,7 @@ body{background:#0d1118;font-family:'Jost',sans-serif;overflow-x:hidden;color:va
           <label class="fl">Teléfono</label>
           <input class="fc2" type="tel" placeholder="+52 33 0000 0000">
         </div>
-        <div class="fg">
-          <label class="fl">Canción que no puede faltar</label>
-          <input class="fc2" type="text" placeholder="Artista — Canción">
-        </div>
+
         <div class="fg">
           <label class="fl">Mensaje para los novios</label>
           <textarea class="fc2 fc2-ta" placeholder="Escribe algo especial..."></textarea>
@@ -879,19 +897,24 @@ body{background:#0d1118;font-family:'Jost',sans-serif;overflow-x:hidden;color:va
   }
   tick(); setInterval(tick,1000);
 
-  /* ── Envelope ── */
-  let opened=false;
-  window.openEnv=function(){
-    if(opened)return; opened=true;
-    document.getElementById('sealWrap').classList.add('break');
-    document.getElementById('monogram').classList.add('hide');
-    setTimeout(()=>document.getElementById('envFlap').classList.add('open'),400);
-    setTimeout(()=>document.getElementById('riseCard').classList.add('open'),850);
-    setTimeout(()=>{
-      document.getElementById('env-screen').classList.add('hide');
-      document.getElementById('inv').classList.add('show');
-    },1750);
-  };
+/* ── Envelope ── */
+let opened=false;
+
+window.openEnv=function(){
+
+  if(opened) return;
+  opened=true;
+
+  const env=document.getElementById("env-screen");
+  const inv=document.getElementById("inv");
+
+  env.classList.add("hide");
+
+  setTimeout(()=>{
+    inv.classList.add("show");
+  },500);
+
+};
 
   /* ── Scroll animations ── */
   const obs = new IntersectionObserver(entries=>{

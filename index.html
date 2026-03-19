@@ -80,19 +80,20 @@ transform:scale(1.03);
 }
 
 .env-overlay{
-
 position:absolute;
-
 display:flex;
 flex-direction:column;
-
 align-items:center;
-
 gap:10px;
-
 bottom:18%;
 
-animation:tapPulse 2s ease-in-out infinite;
+/* animación más elegante */
+animation:tapPulse 2.5s ease-in-out infinite;
+}
+
+@keyframes tapPulse{
+0%,100%{opacity:.4;transform:translateY(0)}
+50%{opacity:1;transform:translateY(-6px)}
 }
 
 .tap-icon{
@@ -459,6 +460,40 @@ transform:translateY(40px) scale(.98);
 100%{
 opacity:1;
 transform:translateY(0) scale(1);
+}
+}
+
+/* ─── ENTRADA SOBRE PREMIUM ───────────────────────── */
+
+#env-screen{
+animation:envIntro 1.4s cubic-bezier(.22,.61,.36,1);
+}
+
+.env-img{
+animation:envFloat 4s ease-in-out infinite;
+}
+
+/* entrada cinematográfica */
+@keyframes envIntro{
+0%{
+opacity:0;
+transform:scale(1.08);
+filter:blur(8px);
+}
+100%{
+opacity:1;
+transform:scale(1);
+filter:blur(0);
+}
+}
+
+/* flotación elegante */
+@keyframes envFloat{
+0%,100%{
+transform:translateY(0);
+}
+50%{
+transform:translateY(-12px);
 }
 }
 </style>

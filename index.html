@@ -486,29 +486,31 @@ window.openEnv=function(){
 window.sendRSVP = async function () {
 
   const payload = {
-    invitado: document.getElementById('rsvpName').textContent,
-    confirmacion: document.getElementById('confirmacion').value,
-    asistentes: document.getElementById('asistentes').value,
-    telefono: document.getElementById('telefono').value,
-    mensaje: document.getElementById('mensaje').value
+    invitado: document.getElementById('rsvpName')?.textContent || '',
+    confirmacion: document.getElementById('confirmacion')?.value || '',
+    asistentes: document.getElementById('asistentes')?.value || '',
+    telefono: document.getElementById('telefono')?.value || '',
+    mensaje: document.getElementById('mensaje')?.value || ''
   };
+
+  console.log("ENVIANDO:", payload);
 
   try {
 
-    await fetch('https://script.google.com/macros/s/AKfycbzvCX_-BiC2EvGXUBYbh2-Yw8p1i6Z1eYXW_3hOHgyGs2rpfaNZxThex3gkhhddg6spng/exec', {
+    await fetch('https://script.google.com/macros/s/AKfycbzvCX__BiC2EvGXUBYbh2-Yw8p1i6Z1eYXW_3hOHgyGs2rpfaNZxThex3gkhhddg6spng/exec', {
       method: 'POST',
       mode: 'no-cors',
-      headers: { 'Content-Type': 'text/plain' },
       body: JSON.stringify(payload)
     });
 
-    // SIEMPRE mostramos éxito
+    console.log("ENVIADO OK");
+
     document.getElementById('rsvpForm').style.display = 'none';
     document.getElementById('sucBlock').classList.add('show');
 
   } catch (error) {
-    alert('Error al enviar, intenta de nuevo');
-    console.error(error);
+    console.error("ERROR:", error);
+    alert('Error al enviar');
   }
 
 };

@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-<title>Antonio & Sarai — 31 Julio 2026</title>
+<title>Antonio & Sarai — 22 Agosto 2026</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Great+Vibes&family=Jost:wght@200;300;400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
@@ -483,11 +483,42 @@ window.openEnv=function(){
     pop.addEventListener('click',function(e){if(e.target===this)this.classList.remove('open'),document.body.style.overflow='';});
   });
 
-  /* ── RSVP ── */
-  window.sendRSVP=function(){
+window.sendRSVP = async function(){
+
+  const nombre = document.querySelector('input[type="text"]').value;
+  const telefono = document.querySelector('input[type="tel"]').value;
+  const confirmacion = document.querySelector('select').value;
+  const mensaje = document.querySelector('textarea').value;
+
+  if(!nombre || !confirmacion){
+    alert("Por favor completa los datos");
+    return;
+  }
+
+  try {
+
+    await fetch("https://script.google.com/macros/s/AKfycbzvCX_-BiC2EvGXUBYbh2-Yw8p1i6Z1eYXW_3hOHgyGs2rpfaNZxThex3gkhhddg6spng/exec", {
+      method: "POST",
+      body: JSON.stringify({
+        nombre,
+        telefono,
+        confirmacion,
+        mensaje
+      }),
+      headers: {
+        "Content-Type": "application/json"
+      }
+    });
+
     document.getElementById('rsvpForm').style.display='none';
     document.getElementById('sucBlock').classList.add('show');
-  };
+
+  } catch (error) {
+    alert("Error al enviar, intenta de nuevo");
+    console.error(error);
+  }
+
+};
 })();
 </script>
 </body>

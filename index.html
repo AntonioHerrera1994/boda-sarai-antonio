@@ -497,18 +497,14 @@ window.sendRSVP = async function(){
 
   try {
 
-    await fetch("https://script.google.com/macros/s/AKfycbzvCX_-BiC2EvGXUBYbh2-Yw8p1i6Z1eYXW_3hOHgyGs2rpfaNZxThex3gkhhddg6spng/exec", {
-      method: "POST",
-      body: JSON.stringify({
-        nombre,
-        telefono,
-        confirmacion,
-        mensaje
-      }),
-      headers: {
-        "Content-Type": "application/json"
-      }
-    });
+  const res = await fetch('https://script.google.com/macros/s/AKfycbzvCX_-BiC2EvGXUBYbh2-Yw8p1i6Z1eYXW_3hOHgyGs2rpfaNZxThex3gkhhddg6spng/exec', {
+  method: 'POST',
+  mode: 'no-cors', // 🔥 CLAVE
+  headers: {
+    'Content-Type': 'text/plain'
+  },
+  body: JSON.stringify(payload)
+});
 
     document.getElementById('rsvpForm').style.display='none';
     document.getElementById('sucBlock').classList.add('show');

@@ -483,34 +483,31 @@ window.openEnv=function(){
     pop.addEventListener('click',function(e){if(e.target===this)this.classList.remove('open'),document.body.style.overflow='';});
   });
 
-window.sendRSVP = async function(){
+window.sendRSVP = async function () {
 
-  const nombre = document.querySelector('input[type="text"]').value;
-  const telefono = document.querySelector('input[type="tel"]').value;
-  const confirmacion = document.querySelector('select').value;
-  const mensaje = document.querySelector('textarea').value;
-
-  if(!nombre || !confirmacion){
-    alert("Por favor completa los datos");
-    return;
-  }
+  const payload = {
+    invitado: document.getElementById('rsvpName').textContent,
+    confirmacion: document.getElementById('confirmacion').value,
+    asistentes: document.getElementById('asistentes').value,
+    telefono: document.getElementById('telefono').value,
+    mensaje: document.getElementById('mensaje').value
+  };
 
   try {
 
-  const res = await fetch('https://script.google.com/macros/s/AKfycbzvCX_-BiC2EvGXUBYbh2-Yw8p1i6Z1eYXW_3hOHgyGs2rpfaNZxThex3gkhhddg6spng/exec', {
-  method: 'POST',
-  mode: 'no-cors', // 🔥 CLAVE
-  headers: {
-    'Content-Type': 'text/plain'
-  },
-  body: JSON.stringify(payload)
-});
+    await fetch('https://script.google.com/macros/s/AKfycbzvCX_-BiC2EvGXUBYbh2-Yw8p1i6Z1eYXW_3hOHgyGs2rpfaNZxThex3gkhhddg6spng/exec', {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: { 'Content-Type': 'text/plain' },
+      body: JSON.stringify(payload)
+    });
 
-    document.getElementById('rsvpForm').style.display='none';
+    // SIEMPRE mostramos éxito
+    document.getElementById('rsvpForm').style.display = 'none';
     document.getElementById('sucBlock').classList.add('show');
 
   } catch (error) {
-    alert("Error al enviar, intenta de nuevo");
+    alert('Error al enviar, intenta de nuevo');
     console.error(error);
   }
 

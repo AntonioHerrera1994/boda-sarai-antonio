@@ -130,13 +130,13 @@ pointer-events:none;
 .hero-content{position:relative;z-index:5;text-align:center;}
 .h-pre{font-size:12px;letter-spacing:6px;text-transform:uppercase;color:#828c6a;font-weight:300;display:block;margin-bottom:28px;animation:fadeUp 1s ease .3s both;}
 .h-n1{
- font-family: "Arizonia", cursive;
+ font-family: "Alex Brush", cursive;
   font-size:clamp(48px,13vw,82px);font-weight:300;color:#828c6a;letter-spacing:4px;line-height:1;display:block;animation:fadeUp 1s ease .5s both;}
 .h-and{
-  font-family: "Arizonia", cursive;
+  font-family: "Alex Brush", cursive;
   font-size:clamp(30px,7vw,50px);color:rgba(130,140,106,.65);display:block;margin:6px 0;animation:fadeUp 1s ease .7s both;}
 .h-n2{
-   font-family: "Arizonia", cursive;
+  font-family: "Alex Brush", cursive;
   font-size:clamp(48px,13vw,82px);font-weight:300;color:#828c6a;letter-spacing:4px;line-height:1;display:block;animation:fadeUp 1s ease .9s both;}
 .h-div{display:flex;align-items:center;gap:14px;justify-content:center;margin:26px 0;animation:fadeUp 1s ease 1.1s both;}
 .h-div::before,.h-div::after{content:'';height:1px;width:50px;background:linear-gradient(to right,transparent,rgba(130,140,106,.3));}

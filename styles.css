@@ -128,7 +128,7 @@ pointer-events:none;
 .stars{position:absolute;inset:0;background-image:radial-gradient(1px 1px at 20% 28%,rgba(130,140,106,.25) 0%,transparent 100%),radial-gradient(1px 1px at 58% 12%,rgba(166,180,163,.2) 0%,transparent 100%),radial-gradient(1px 1px at 84% 44%,rgba(130,140,106,.15) 0%,transparent 100%),radial-gradient(1px 1px at 40% 78%,rgba(166,180,163,.15) 0%,transparent 100%),radial-gradient(1px 1px at 73% 72%,rgba(130,140,106,.2) 0%,transparent 100%);}
 
 .hero-content{position:relative;z-index:5;text-align:center;}
-.h-pre{font-size:12px;letter-spacing:6px;text-transform:uppercase;color:#828c6a;font-weight:300;display:block;margin-bottom:28px;animation:fadeUp 1s ease .3s both;}
+.h-pre{font-size:16px;letter-spacing:6px;text-transform:uppercase;color:#828c6a;font-weight:300;display:block;margin-bottom:28px;animation:fadeUp 1s ease .3s both;}
 .h-n1{
  font-family: "Alex Brush", cursive;
   font-size:clamp(48px,13vw,82px);font-weight:300;color:#828c6a;letter-spacing:4px;line-height:1;display:block;animation:fadeUp 1s ease .5s both;}
@@ -142,13 +142,15 @@ pointer-events:none;
 .h-div::before,.h-div::after{content:'';height:1px;width:50px;background:linear-gradient(to right,transparent,rgba(130,140,106,.3));}
 .h-div::after{background:linear-gradient(to left,transparent,rgba(130,140,106,.3));}
 .h-div span{font-size:12px;color:#828c6a;opacity:.6;}
-.h-std{font-family:'Cormorant Garamond',serif;font-size:clamp(20px,5vw,32px);font-style:italic;font-weight:300;color:#828c6a;display:block;margin-bottom:22px;animation:fadeUp 1s ease 1.3s both;}
+.h-std{
+  font-family:'Cormorant Garamond',serif;
+  font-size:32px;font-style:italic;font-weight:300;color:#828c6a;display:block;margin-bottom:22px;animation:fadeUp 1s ease 1.3s both;}
 .cdown{display:flex;justify-content:center;align-items:flex-start;gap:clamp(8px,3vw,24px);animation:fadeUp 1s ease 1.5s both;}
 .cb{display:flex;flex-direction:column;align-items:center;gap:5px;}
-.cn{font-family:'Cormorant Garamond',serif;font-size:clamp(38px,9vw,66px);font-weight:300;color:#828c6a;line-height:1;min-width:2ch;text-align:center;}
+.cn{font-family:'Cormorant Garamond',serif;font-size:42px;font-weight:300;color:#828c6a;line-height:1;min-width:2ch;text-align:center;}
 .csep{font-family:'Cormorant Garamond',serif;font-size:clamp(30px,7vw,52px);color:rgba(130,140,106,.3);line-height:1;margin-top:3px;}
-.cl{font-size:12px;letter-spacing:3px;text-transform:uppercase;color:rgba(130,140,106,.5);font-weight:300;}
-.h-date{display:block;margin-top:24px;font-size:12px;letter-spacing:6px;text-transform:uppercase;color:var(--coral);font-weight:300;animation:fadeUp 1s ease 1.7s both;}
+.cl{font-size:14px;letter-spacing:3px;text-transform:uppercase;color:rgba(130,140,106,.5);font-weight:300;}
+.h-date{display:block;margin-top:24px;font-size:16px;letter-spacing:6px;text-transform:uppercase;color:var(--coral);font-weight:300;animation:fadeUp 1s ease 1.7s both;}
 .mus-note{position:absolute;bottom:20px;left:18px;font-size:13px;color:rgba(130,140,106,.25);animation:noteF 4s ease-in-out infinite;}
 @keyframes noteF{0%,100%{transform:translateY(0) rotate(-5deg);opacity:.25;}50%{transform:translateY(-6px) rotate(5deg);opacity:.45;}}
 @keyframes fadeUp{from{opacity:0;transform:translateY(22px);}to{opacity:1;transform:translateY(0);}}
@@ -179,10 +181,10 @@ pointer-events:none;
 /* Section header with SVG vector */
 .sec-head{display:flex;flex-direction:column;align-items:center;gap:10px;margin-bottom:36px;}
 .sec-vec{display:block;margin:0 auto 4px;}
-.sec-eye{font-size:9px;letter-spacing:5px;text-transform:uppercase;color:var(--coral);font-weight:400;display:block;text-align:center;}
+.sec-eye{font-size:13px;letter-spacing:5px;text-transform:uppercase;color:var(--coral);font-weight:400;display:block;text-align:center;}
 .sec-tit{
 font-family: "Alex Brush", cursive;
-  font-size:32px;font-weight:300;line-height:1;text-align:center;
+  font-size:40px;font-weight:300;line-height:1;text-align:center;
   color:var(--coral);}
 .sec-tit em{font-style:italic;color:var(--coral);}
 .orn{display:flex;align-items:center;gap:12px;justify-content:center;margin-top:16px;}
@@ -243,7 +245,7 @@ font-family: "Alex Brush", cursive;
 .pq-icon{font-size:15px;color:var(--coral);opacity:.5;margin-bottom:8px;display:block;}
 .pq{
   font-family:'Cormorant Garamond',serif;
-  font-size:clamp(17px,4vw,21px);font-style:italic;font-weight:300;
+  font-size:24px;font-style:italic;font-weight:300;
   color:#2e1a12;line-height:1.85;
   text-shadow:0 2px 12px rgba(246,244,240,.8), 0 0 30px rgba(246,244,240,.5);
 }
@@ -252,12 +254,12 @@ font-family: "Alex Brush", cursive;
 /* ─── AGRADECIMIENTOS ───────────────────────────────── */
 
 .cs.agra{
-  margin-top: -100px;
+  margin-top: -30px;
 }
 .grat-text{
   max-width:500px;margin:0 auto;text-align:center;
   font-family:'Cormorant Garamond',serif;
-  font-size:clamp(17px,4vw,22px);font-weight:300;
+  font-size:24px;font-weight:300;
   font-style:italic;color:#5a3a2c;line-height:1.9;
 }
 .grat-names{
@@ -266,7 +268,7 @@ font-family: "Alex Brush", cursive;
 }
 .grat-name{
   font-family:'Cormorant Garamond',serif;
-  font-size:clamp(15px,3.5vw,19px);font-weight:300;
+  font-size:24px;font-weight:300;
   color:var(--dark);letter-spacing:.5px;
   padding:4px 0;border-bottom:1px solid rgba(207,142,134,.2);
   width:100%;text-align:center;
@@ -306,20 +308,20 @@ font-family: "Alex Brush", cursive;
 .cer-card::before{content:'';position:absolute;top:8px;left:8px;right:-8px;bottom:-8px;border:1px solid rgba(207,142,134,.08);pointer-events:none;}
 .cer-name{
     font-family:'Cormorant Garamond',serif;
-    font-size:clamp(20px,5vw,28px);
+    font-size:24px;
     font-weight:300;
     color:white;
     display:block;
     margin-bottom:6px;}
 .cer-time{
     font-family:'Cormorant Garamond',serif;
-    font-size:clamp(17px,4vw,23px);
+    font-size:26px;
     color:white;
     font-style:italic;
     display:block;
     margin-bottom:16px;}
 .cer-addr{
-    font-size:13px;
+    font-size:20px;
     color:white;
     line-height:1.85;
     font-weight:300;}
@@ -404,8 +406,8 @@ font-family: "Alex Brush", cursive;
 .itin::before{content:'';position:absolute;left:50%;top:40px;bottom:40px;width:1px;background:linear-gradient(to bottom,transparent,rgba(207,142,134,.25) 15%,rgba(207,142,134,.25) 85%,transparent);transform:translateX(-50%);}
 .ii{display:flex;flex-direction:column;align-items:center;gap:6px;margin-bottom:44px;position:relative;z-index:1;}
 
-.ii-time{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:300;color:var(--dark);}
-.ii-lbl{font-size:9px;letter-spacing:5px;text-transform:uppercase;color:var(--coral);font-weight:300;}
+.ii-time{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:300;color:var(--dark);}
+.ii-lbl{font-size:13px;letter-spacing:5px;text-transform:uppercase;color:var(--coral);font-weight:300;}
 
 .circulo-itin{
 background-image: url('textura-fondo.webp');
@@ -437,29 +439,30 @@ border-radius: 80px;
 .reg-ico{font-size:40px;display:block;margin-bottom:14px;}
 .reg-name{
     font-family:'Cormorant Garamond',serif;
-    font-size:clamp(19px,4vw,24px);
+    font-size:22px;
     font-weight:300;color:var(--dark);
     display:block;
     margin-bottom:4px;
     color: white;
 }
 .reg-desc{
-    font-size:10px;
+    font-size:12px;
     letter-spacing:3px;
     text-transform:uppercase;
     color:white;
     font-weight:300;}
 
 /* ─── DRESS CODE ────────────────────────────────────── */
-.dc-theme{font-family:'Cormorant Garamond',serif;font-size:clamp(26px,6vw,42px);font-weight:300;font-style:italic;color:var(--dark);display:block;margin-bottom:8px;text-align:center;}
-.dc-sub{font-size:10px;letter-spacing:5px;text-transform:uppercase;color:var(--coral);font-weight:200;display:block;margin-bottom:40px;text-align:center;}
+.dc-theme{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:300;font-style:italic;color:var(--dark);display:block;margin-bottom:8px;text-align:center;}
+.dc-sub{font-size:12px;letter-spacing:5px;text-transform:uppercase;color:var(--coral);font-weight:200;display:block;margin-bottom:40px;text-align:center;}
 .palette{display:flex;justify-content:center;gap:16px;flex-wrap:wrap;margin-bottom:36px;}
 .sw{display:flex;flex-direction:column;align-items:center;gap:10px;cursor:default;}
 .sw-c{width:62px;height:62px;border-radius:50%;box-shadow:0 6px 20px rgba(0,0,0,.1);transition:transform .35s;}
 .sw:hover .sw-c{transform:scale(1.18) translateY(-5px);}
-.sw-n{font-size:8px;letter-spacing:3px;text-transform:uppercase;color:#aaa;font-weight:300;text-align:center;max-width:70px;line-height:1.4;}
-.dc-notes{max-width:380px;margin:0 auto;font-family:'Cormorant Garamond',serif;font-size:16px;font-style:italic;color:#999;line-height:2;text-align:center;}
-.dc-avoid{display:inline-block;margin-top:22px;padding:10px 22px;border:1px solid rgba(207,142,134,.3);background:rgba(232,184,169,.06);font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--coral);}
+.sw-n{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:#aaa;font-weight:300;text-align:center;max-width:70px;line-height:1.4;}
+.dc-notes{max-width:380px;margin:0 auto;font-family:'Cormorant Garamond',serif;font-size:20px;font-style:italic;color:#999;line-height:2;text-align:center;}
+.dc-avoid{display:inline-block;margin-top:22px;padding:10px 22px;border:1px solid rgba(207,142,134,.3);background:rgba(232,184,169,.06);font-size:12px;letter-spacing:3px;text-transform:uppercase;color:var(--coral);
+line-height: 20px;}
 
 /* ─── RSVP ──────────────────────────────────────────── */
 .rsvp-card{background:#fff;max-width:460px;margin:30px auto 0;padding:40px 32px;border:1px solid rgba(207,142,134,.15);position:relative;}
@@ -491,8 +494,8 @@ border-radius: 80px;
   padding:70px 24px;text-align:center;position:relative;overflow:hidden;}
 .footer::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(232,184,169,.05) 0%,transparent 70%);}
 .f-names{font-family:'Great Vibes',cursive;font-size:clamp(56px,14vw,110px);color:white;line-height:1;position:relative;}
-.f-date{font-size:11px;letter-spacing:6px;text-transform:uppercase;color:white;font-weight:200;margin-top:28px;position:relative;}
-.f-love{font-family:'Cormorant Garamond',serif;font-size:15px;font-style:italic;color:white;margin-top:14px;position:relative;font-weight: 600;}
+.f-date{font-size:14px;letter-spacing:6px;text-transform:uppercase;color:white;font-weight:200;margin-top:28px;position:relative;}
+.f-love{font-family:'Cormorant Garamond',serif;font-size:20px;font-style:italic;color:white;margin-top:14px;position:relative;font-weight: 600;}
 
 ::-webkit-scrollbar{width:2px;}
 ::-webkit-scrollbar-thumb{background:rgba(207,142,134,.2);}

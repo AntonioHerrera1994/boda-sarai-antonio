@@ -181,10 +181,10 @@ pointer-events:none;
 /* Section header with SVG vector */
 .sec-head{display:flex;flex-direction:column;align-items:center;gap:10px;margin-bottom:36px;}
 .sec-vec{display:block;margin:0 auto 4px;}
-.sec-eye{font-size:13px;letter-spacing:5px;text-transform:uppercase;color:var(--coral);font-weight:400;display:block;text-align:center;}
+.sec-eye{font-size:12px;letter-spacing:5px;text-transform:uppercase;color:var(--coral);font-weight:400;display:block;text-align:center;}
 .sec-tit{
 font-family: "Alex Brush", cursive;
-  font-size:40px;font-weight:300;line-height:1;text-align:center;
+  font-size:43px;font-weight:300;line-height:1;text-align:center;
   color:var(--coral);}
 .sec-tit em{font-style:italic;color:var(--coral);}
 .orn{display:flex;align-items:center;gap:12px;justify-content:center;margin-top:16px;}

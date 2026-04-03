@@ -241,10 +241,10 @@ font-family: "Alex Brush", cursive;
 }
 @media(max-width:800px){
 .photo-ph{
-  height: 85vh;
+  height: 88vh;
 }
 .pq{
-margin-top: -50px;
+margin-top: -60px;
 }
   .photo-txt{ top:60%; }
 }

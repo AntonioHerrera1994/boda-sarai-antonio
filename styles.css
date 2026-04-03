@@ -390,10 +390,12 @@ font-family: "Alex Brush", cursive;
   cursor:pointer;transition:all .3s;text-decoration:none;
 }
 
-.gift-ico{width:48px;height:48px;border-radius:2px;display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0;}
+.gift-item img{
+  max-width: 15%;
+}
 
 .gift-info{flex:1;}
-.gift-store{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:300;color:white;display:block;}
+.gift-store{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:600;color:white;display:block;}
 .gift-no{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--coral);font-weight:300;}
 .gift-arr{color:var(--coral);font-size:16px;opacity:.5;}
 
@@ -484,11 +486,13 @@ border-radius: 80px;
 .suc-sub{font-size:11px;letter-spacing:4px;text-transform:uppercase;color:#bbb;margin-top:12px;display:block;}
 
 /* ─── FOOTER ────────────────────────────────────────── */
-.footer{background:#1c1208;padding:70px 24px;text-align:center;position:relative;overflow:hidden;}
+.footer{background-image: url('textura-fondo.webp');
+  background-size: cover;
+  padding:70px 24px;text-align:center;position:relative;overflow:hidden;}
 .footer::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(232,184,169,.05) 0%,transparent 70%);}
-.f-names{font-family:'Great Vibes',cursive;font-size:clamp(56px,14vw,110px);color:rgba(255,255,255,.06);line-height:1;position:relative;}
-.f-date{font-size:11px;letter-spacing:6px;text-transform:uppercase;color:var(--coral);font-weight:200;margin-top:28px;position:relative;}
-.f-love{font-family:'Cormorant Garamond',serif;font-size:15px;font-style:italic;color:rgba(255,255,255,.2);margin-top:14px;position:relative;}
+.f-names{font-family:'Great Vibes',cursive;font-size:clamp(56px,14vw,110px);color:white;line-height:1;position:relative;}
+.f-date{font-size:11px;letter-spacing:6px;text-transform:uppercase;color:white;font-weight:200;margin-top:28px;position:relative;}
+.f-love{font-family:'Cormorant Garamond',serif;font-size:15px;font-style:italic;color:white;margin-top:14px;position:relative;font-weight: 600;}
 
 ::-webkit-scrollbar{width:2px;}
 ::-webkit-scrollbar-thumb{background:rgba(207,142,134,.2);}

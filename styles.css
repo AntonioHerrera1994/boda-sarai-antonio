@@ -184,7 +184,7 @@ pointer-events:none;
 .sec-eye{font-size:11px;letter-spacing:5px;text-transform:uppercase;color:var(--coral);font-weight:400;display:block;text-align:center;}
 .sec-tit{
 font-family: "Alex Brush", cursive;
-  font-size:434x;font-weight:300;line-height:1;text-align:center;
+  font-size:43px;font-weight:300;line-height:1;text-align:center;
   color:var(--coral);}
 .sec-tit em{font-style:italic;color:var(--coral);}
 .orn{display:flex;align-items:center;gap:12px;justify-content:center;margin-top:16px;}
